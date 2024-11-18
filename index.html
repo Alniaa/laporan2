@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Teori</title>
+  <style>
+    /* Mode Rapi */
+    :root {
+      --background-color: #f9f9f9;
+      --text-color: #333;
+      --accent-color: #007bff;
+      --font-family: Arial, sans-serif;
+      --content-padding: 20px;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--background-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: var(--content-padding);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      color: var(--accent-color);
+      text-align: center;
+    }
+
+    h2 {
+      color: #555;
+    }
+
+    h3 {
+      cursor: pointer;
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .toggle-button {
+      margin: 20px 0;
+      padding: 10px 15px;
+      border: none;
+      background-color: var(--accent-color);
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Mode Berantakan */
+    .messy {
+      --background-color: #0073ff;
+      --text-color: #ff0000;
+      --accent-color: #00ffff;
+      --font-family: "Comic Sans MS", cursive;
+      --content-padding: 5px;
+    }
+
+    .messy h1, .messy h2, .messy h3 {
+      text-align: left;
+    }
+
+    .messy p {
+      font-size: 20px;
+      color: #00ff00;
+    }
+
+    .messy .toggle-button {
+      background-color: #ff0000;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <h1>LAPORAN TEORI</h1>
+  <h2>Naila Husnaa | 202331231</h2>
+
+  <h3 onclick="toggleContent('content1')">Mengapa menggunakan HTML, CSS serta JavaScript dalam pemrograman web?</h3>
+  <p id="content1">HTML, CSS, dan JavaScript adalah tiga teknologi utama dalam pengembangan web. Mereka bekerja bersama untuk membuat halaman web yang interaktif dan menarik. HTML adalah bahasa markup yang digunakan untuk membuat struktur dasar dari sebuah halaman web. Elemen-elemen HTML seperti header, paragraf, gambar, dan link membentuk kerangka konten situs web. CSS digunakan untuk mengatur tampilan dan tata letak halaman web. Dengan CSS, Anda bisa mengubah warna, font, margin, padding, dan banyak aspek visual lainnya dari elemen HTML. Dan JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web interaktif. Dengan JavaScript, Anda bisa membuat berbagai interaksi seperti validasi formulir, animasi, dan manipulasi elemen HTML secara dinamis. HTML, CSS, dan JavaScript saling melengkapi dalam pengembangan web. HTML memberikan struktur, CSS memberikan desain, dan JavaScript menambahkan interaktivitas.</p>
+
+  <h3 onclick="toggleContent('content2')">Bagaimana HTML, CSS serta JavaScript dapat diintegrasikan dalam pemrograman web?</h3>
+  <p id="content2">HTML, CSS, dan JavaScript adalah tiga komponen utama dalam pengembangan web yang saling melengkapi untuk menciptakan halaman web yang fungsional, menarik, dan interaktif. CSS dapat disertakan dalam HTML dengan menggunakan tag link untuk file eksternal atau tag style untuk CSS internal. Ini memungkinkan Anda untuk mengatur gaya elemen HTML. JavaScript dapat disertakan dalam HTML dengan menggunakan tag script untuk file eksternal atau menulis kode JavaScript langsung di dalam tag script. Ini memungkinkan Anda untuk menambahkan interaktivitas ke elemen HTML. JavaScript dapat digunakan untuk mengakses dan memanipulasi elemen HTML menggunakan metode DOM. Misalnya, Anda dapat mengubah teks, menambahkan kelas CSS, atau menyembunyikan elemen. Dengan mengintegrasikan HTML, CSS, dan JavaScript, pengembang web dapat menciptakan pengalaman pengguna yang lebih baik dengan situs yang terstruktur, menarik secara visual, dan kaya interaksi. Ini adalah dasar dari pengembangan web modern.</p>
+
+  <button class="toggle-button" onclick="toggleMode()">Ubah Mode Tampilan</button>
+
+  <script>
+    let isMessy = false;
+
+    function toggleContent(contentId) {
+      const content = document.getElementById(contentId);
+      if (confirm("Apakah Anda ingin menyembunyikan konten ini?")) {
+        content.classList.toggle('hidden');
+      }
+    }
+
+    function toggleMode() {
+      isMessy = !isMessy;
+      document.body.classList.toggle('messy', isMessy);
+    }
+  </script>
+</body>
+</html>
